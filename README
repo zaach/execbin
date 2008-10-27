@@ -1,0 +1,13 @@
+Let's you run commands and view the result.
+
+Try things like:
+
+ls
+ps
+top -n 1
+date
+/sdcard/mybinary
+
+etc.
+
+
