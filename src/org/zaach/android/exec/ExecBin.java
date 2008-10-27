@@ -24,7 +24,7 @@ public class ExecBin extends Activity {
 	   final Button execBtn = (Button) findViewById(R.id.exec);	   
 	   final Button copyBtn = (Button) findViewById(R.id.copy);	 
 
-	   final TextView result = (TextView) findViewById(R.id.result);
+	   //final TextView result = (TextView) findViewById(R.id.result);
 	   
        execBtn.setOnClickListener(new View.OnClickListener() {
            public void onClick(View v) {
@@ -36,7 +36,10 @@ public class ExecBin extends Activity {
         	   
         	   String command_text = cmd.getText().toString();
         	   
-        	   Log.d("Zach","command_text was: "+command_text);
+        	   if(command_text.length() == 0)
+        		   return;
+        	   
+        	   Log.d("ExecBin","command_text was: "+command_text);
         	   
         	   String outp = null;
         	   
@@ -44,7 +47,7 @@ public class ExecBin extends Activity {
 				outp = proc.exec(command_text); // try /data/hi
 				outbox.setText(outp);
 			} catch (IOException e) {
-				Log.e("Zach", e.toString());
+				Log.e("ExecBin", e.toString());
 			}
         	   
            }
@@ -56,28 +59,11 @@ public class ExecBin extends Activity {
         	   final TextView outbox = (TextView) findViewById(R.id.result);
         	   String text = outbox.getText().toString();
         	   
-        	   Log.d("Zach","result copied");
+        	   Log.d("ExecBin","result copied");
         	  
         	   ClipboardManager clipboard = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
 			   clipboard.setText(text);
         	   
-           }
-       });
-       
-
-       
-       result.setOnLongClickListener(new View.OnLongClickListener() {
-           public boolean onLongClick(View v) {
-               // Perform action on click
-        	   final TextView outbox = (TextView) findViewById(R.id.result);
-        	   String text = outbox.getText().toString();
-        	   
-        	   Log.d("Zach","result copied");
-        	  
-        	   ClipboardManager clipboard = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
-			   clipboard.setText(text);
-        	   
-			   return true;
            }
        });
 
