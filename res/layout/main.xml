@@ -10,15 +10,11 @@
     android:text="Command:"
     />
     
-    <EditText 
+    <AutoCompleteTextView 
     android:layout_width="fill_parent" 
     android:layout_height="wrap_content"
     android:singleLine="true"
-    android:id="@+id/command" />
-    
-    <Button android:id="@+id/exec" android:text="Execute"
-    android:layout_height="wrap_content"
-    android:layout_width="fill_parent"  />
+    android:id="@+id/prompt" />
     
 	<EditText  
 	    android:layout_width="fill_parent" 
@@ -29,7 +25,4 @@
 	    android:editable="false"
 	    android:scrollbars="vertical"
 	    android:scrollbarStyle="outsideOverlay" android:typeface="monospace" android:textSize="6pt" android:textColor="#FFFFFF" android:background="#000000"/>
-    <Button android:id="@+id/copy" android:text="Copy Output"
-    android:layout_height="wrap_content"
-    android:layout_width="fill_parent"  />
 </LinearLayout>

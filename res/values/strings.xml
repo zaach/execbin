@@ -2,4 +2,9 @@
 <resources>
     <string name="hello">Hello World, HelloAndroid</string>
     <string name="app_name">Execute Binary</string>
+
+<string name="copy">Copy</string>
+<string name="copied">Output copied</string>
+<string name="executing">Executing command...</string>
+<string name="broke">Dude....... you broke it.</string>
 </resources>
